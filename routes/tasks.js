@@ -62,7 +62,7 @@ router.delete("/delete/:taskId", checkFunction, (req, res) => {
       if (err || !task) {
         return res.status(400).json({ Error: "Task not found..." });
       } else if (task.postedBy.email.toString() !== req.user.email.toString()) {
-        return res.status(400).json({ Error: "Invalid request" });
+        return res.status(400).json({ Error: "Invalid request...." });
       }
       task
         .remove()
