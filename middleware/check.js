@@ -6,7 +6,7 @@ require("dotenv").config();
 exports.checkFunction = (req, res, next) => {
   const { authorization } = req.headers;
   if (!authorization) {
-    return res.status(400).json({ Error: "Login required" });
+    return res.status(400).json({ Error: "Login required..." });
   }
   const jwtToken = authorization.replace("Bearer ", "");
   jwt.verify(jwtToken, process.env.JWT_KEY, (err, payload) => {
