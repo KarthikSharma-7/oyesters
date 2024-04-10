@@ -67,7 +67,7 @@ router.delete("/delete/:taskId", checkFunction, (req, res) => {
       task
         .remove()
         .then((result) => {
-          res.status(200).json({ Message: "Deleted ssuccessfully" });
+          res.status(200).json({ Message: "Deleted ssuccessfully...." });
         })
         .catch((e) => {
           res.status(200).json({ Erro: e });
