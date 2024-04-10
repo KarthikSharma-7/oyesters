@@ -39,7 +39,7 @@ router.patch("/update/:taskId", checkFunction, (req, res) => {
     .populate("postedBy", "email")
     .exec((err, task) => {
       if (err || !task) {
-        return res.status(400).json({ Error: "Invalid task" });
+        return res.status(400).json({ Error: "Invalid task...." });
       } else if (task.postedBy.email.toString() === req.user.email.toString()) {
         const { title, description } = req.body;
         tModel.updateOne(
